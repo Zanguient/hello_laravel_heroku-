@@ -1,0 +1,1 @@
+OCI runtime exec failed: exec failed: container_linux.go:344: starting container process caused "exec: \"127.0.0.1:6379\": executable file not found in $PATH": unknown
