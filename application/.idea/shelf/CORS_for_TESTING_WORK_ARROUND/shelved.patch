@@ -1,0 +1,15 @@
+Index: public/index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\nheader(\"Access-Control-Allow-Origin: *\");\n/**\n * Laravel - A PHP Framework For Web Artisans\n *\n * @package  Laravel\n * @author   Taylor Otwell <taylor@laravel.com>\n */\n\ndefine('LARAVEL_START', microtime(true));\n\n/*\n|--------------------------------------------------------------------------\n| Register The Auto Loader\n|--------------------------------------------------------------------------\n|\n| Composer provides a convenient, automatically generated class loader for\n| our application. We just need to utilize it! We'll simply require it\n| into the script here so that we don't have to worry about manual\n| loading any of our classes later on. It feels great to relax.\n|\n*/\n\nrequire __DIR__.'/../vendor/autoload.php';\n\n/*\n|--------------------------------------------------------------------------\n| Turn On The Lights\n|--------------------------------------------------------------------------\n|\n| We need to illuminate PHP development, so let us turn on the lights.\n| This bootstraps the framework and gets it ready for use, then it\n| will load up this application so that we can run it and send\n| the responses back to the browser and delight our users.\n|\n*/\n\n$app = require_once __DIR__.'/../bootstrap/app.php';\n\n/*\n|--------------------------------------------------------------------------\n| Run The Application\n|--------------------------------------------------------------------------\n|\n| Once we have the application, we can handle the incoming request\n| through the kernel, and send the associated response back to\n| the client's browser allowing them to enjoy the creative\n| and wonderful application we have prepared for them.\n|\n*/\n\n$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);\n\n$response = $kernel->handle(\n    $request = Illuminate\\Http\\Request::capture()\n);\n\n$response->send();\n\n$kernel->terminate($request, $response);\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- public/index.php	(revision bc8f84f88e8e1feb951ecd01ab87ba0509fd8d9c)
++++ public/index.php	(date 1569623924000)
+@@ -1,5 +1,4 @@
+ <?php
+-header("Access-Control-Allow-Origin: *");
+ /**
+  * Laravel - A PHP Framework For Web Artisans
+  *

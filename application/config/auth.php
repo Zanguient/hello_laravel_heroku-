@@ -45,6 +45,7 @@ return [
             'driver' => 'passport',
             'provider' => 'users',
             'hash' => false,
+            \Barryvdh\Cors\HandleCors::class,
         ],
     ],
 

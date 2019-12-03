@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="comparison@localhost" uuid="87d319c9-29d0-4884-bec3-10720a8c50c4">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/comparison</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="d5b8m3kdjolq58@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com" uuid="f7f840cd-feac-4616-9332-43badb766fca">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/d5b8m3kdjolq58</jdbc-url>
+    </data-source>
+  </component>
+</project>

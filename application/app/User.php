@@ -6,6 +6,7 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Access;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'newsletter_subscription'
     ];
 
     /**
@@ -37,4 +38,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function access() {
+
+        return $this->hasManyThrough('App\Study', 'App\Access', 'user_id', 'id', 'id', 'study_id');
+    }
+
+    function sublist(){
+
+        return  $this->hasManyThrough('App\Study_item',  'App\Access', 'user_id', 'study_id', 'id', 'study_id');
+
+    }
+    function subStudyPartisipants(){
+
+        return  $this->belongsTo('App\Access');
+    }
+
 }

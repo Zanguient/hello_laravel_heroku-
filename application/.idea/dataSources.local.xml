@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="comparison@localhost" uuid="87d319c9-29d0-4884-bec3-10720a8c50c4">
+      <database-info product="PostgreSQL" version="11.5 (Ubuntu 11.5-1.pgdg18.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.5" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>homestead</user-name>
+      <introspection-schemas>comparison:@</introspection-schemas>
+    </data-source>
+    <data-source name="d5b8m3kdjolq58@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com" uuid="f7f840cd-feac-4616-9332-43badb766fca">
+      <database-info product="PostgreSQL" version="11.5 (Ubuntu 11.5-1.pgdg16.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.5" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>jyovttakrlmleg</user-name>
+      <introspection-schemas>@:@|d5b8m3kdjolq58:*</introspection-schemas>
+    </data-source>
+  </component>
+</project>

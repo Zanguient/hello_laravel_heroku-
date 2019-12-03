@@ -1,5 +1,13 @@
 <?php
 
+use Illuminate\Redis\RedisManager;
+
+$server_env_app_key = getenv("APP_KEY") ?: "base64:sigCyc4DrtKL4a2VDMDYEynsT+HSVNtcqJEdnoFXJ2g=";
+$server_app_key = '';
+if($server_env_app_key){
+    $server_app_key =   $server_env_app_key;
+}
+
 return [
 
     /*
@@ -119,7 +127,9 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+
+    'key' =>  env('APP_KEY', $server_app_key),
+
 
     'cipher' => 'AES-256-CBC',
 
@@ -155,7 +165,7 @@ return [
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
-        Illuminate\Redis\RedisServiceProvider::class,
+        //Illuminate\Redis\RedisServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
@@ -214,7 +224,8 @@ return [
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
-        'Redis' => Illuminate\Support\Facades\Redis::class,
+        //'RedisManager' => Illuminate\Support\Facades\Redis::class,
+         'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
         'Response' => Illuminate\Support\Facades\Response::class,
         'Route' => Illuminate\Support\Facades\Route::class,
