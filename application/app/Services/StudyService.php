@@ -13,6 +13,12 @@ class StudyService
         $this->study = $studyRepository;
     }
 
+
+    public function foo(){
+
+        return 12345;
+    }
+
     public function index()
     {
 

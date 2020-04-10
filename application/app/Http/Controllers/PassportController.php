@@ -25,8 +25,30 @@ class PassportController extends Controller
 
     public function login() {
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
-            $user = Auth::user();
+
+            try{
+                $user = Auth::user();
+                $accessLevel = Auth::user()->access_level;
+                if($accessLevel == 1 || $accessLevel == 2) {
+                    $url = '/admin/data-analytics';
+                } else {
+
+                    // send to  handler
+
+                    // check if user has filled in profile page
+                    $url = $this->profileChecker();
+
+                    // if profile available redirect to
+                    // home
+                }
+            }
+
+            catch(Exception $e){
+                dd($e);
+            }
             $success['token'] = $user->createToken('MyApp')->accessToken;
+            $success['user_details'] = $user;
+            $success['redirect_url'] =  $url;
             return response()->json($success, $this->sucessStatus);
         }
         else {

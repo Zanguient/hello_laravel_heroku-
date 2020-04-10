@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/', function () {
+
+    //$user = Auth::id();
+    return array('email' => 'glendonsmall@yahoo.co.uk');
+    //return DB::table('accesses')->paginate(10    );
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
