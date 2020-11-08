@@ -11,7 +11,7 @@ services:
         ipv4_address: 172.28.1.8
 
   postgres:
-    image: postgres:9.5-alpine
+    image: postgres:latest
     container_name: ${PROJECT_NAME}-postgres
     volumes:
       - "./sourcefiles/postgres:/var/lib/postgresql/data"
@@ -47,7 +47,7 @@ services:
     working_dir: /_application
     volumes:
       - ./application:/application
-      - ./sourcefiles/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
+      - ./sourcefiles/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
     links:
       - postgres
       - redis
